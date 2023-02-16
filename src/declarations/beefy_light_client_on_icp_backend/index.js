@@ -34,4 +34,4 @@ export const createActor = (canisterId, options = {}) => {
   });
 };
 
-export const beefy_light_client_on_icp_backend = createActor(canisterId);
+// export const beefy_light_client_on_icp_backend = createActor(canisterId);

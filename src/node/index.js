@@ -8,13 +8,14 @@ import {Ed25519KeyIdentity} from "@dfinity/identity";
 const require = createRequire(import.meta.url);
 const localCanisterIds = require("../../canister_ids.json");
 
-export const aliceIdentity = Ed25519KeyIdentity.generate();
+// export const aliceIdentity = Ed25519KeyIdentity.generate();
 
 export const host = "http://127.0.0.1:4943";
 // export const host = "https://ic0.app";    //mainnet
 const agent = new HttpAgent({
   host,
-  identity: aliceIdentity,
+//   identity: aliceIdentity,
+  identity: await identity,
   fetch,
 });
 const effectiveCanisterId =
