@@ -5,4 +5,5 @@ import { Secp256k1KeyIdentity } from "@dfinity/identity-secp256k1";
 const seed = "test test test test test test test test test test test test";
 
 export const identity = await Secp256k1KeyIdentity.fromSeedPhrase(seed);
-console.log(identity);
+// console.log(identity);
+console.log(identity.getPrincipal());

@@ -1,10 +1,5 @@
 export const idlFactory = ({ IDL }) => {
   return IDL.Service({
-    'complete_updating_state' : IDL.Func(
-        [IDL.Nat],
-        [IDL.Variant({ 'Ok' : IDL.Bool, 'Err' : IDL.Text })],
-        [],
-      ),
     'public_key' : IDL.Func(
         [],
         [
@@ -17,17 +12,7 @@ export const idlFactory = ({ IDL }) => {
       ),
     'set_client' : IDL.Func(
         [IDL.Text, IDL.Vec(IDL.Text)],
-        [IDL.Variant({ 'Ok' : IDL.Bool, 'Err' : IDL.Text })],
-        [],
-      ),
-    'sign' : IDL.Func(
-        [IDL.Vec(IDL.Nat8)],
-        [
-          IDL.Variant({
-            'Ok' : IDL.Record({ 'signature' : IDL.Vec(IDL.Nat8) }),
-            'Err' : IDL.Text,
-          }),
-        ],
+        [IDL.Variant({ 'Ok' : IDL.Null, 'Err' : IDL.Text })],
         [],
       ),
     'sign_messages' : IDL.Func(
@@ -38,11 +23,6 @@ export const idlFactory = ({ IDL }) => {
             'Err' : IDL.Text,
           }),
         ],
-        [],
-      ),
-    'start_updating_state' : IDL.Func(
-        [IDL.Vec(IDL.Nat8)],
-        [IDL.Variant({ 'Ok' : IDL.Null, 'Err' : IDL.Text })],
         [],
       ),
     'test_beefy' : IDL.Func(
