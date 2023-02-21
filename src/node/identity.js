@@ -6,4 +6,4 @@ const seed = "test test test test test test test test test test test test";
 
 export const identity = await Secp256k1KeyIdentity.fromSeedPhrase(seed);
 // console.log(identity);
-console.log(identity.getPrincipal());
+// console.log(identity.getPrincipal());
