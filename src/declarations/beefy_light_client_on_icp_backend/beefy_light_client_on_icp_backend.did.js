@@ -25,6 +25,16 @@ export const idlFactory = ({ IDL }) => {
         ],
         [],
       ),
+    'sign_messages2' : IDL.Func(
+        [
+          IDL.Vec(IDL.Nat8),
+          IDL.Vec(IDL.Nat8),
+          IDL.Vec(IDL.Nat8),
+          IDL.Vec(IDL.Nat8),
+        ],
+        [IDL.Variant({ 'Ok' : IDL.Vec(IDL.Nat8), 'Err' : IDL.Text })],
+        [],
+      ),
     'test_beefy' : IDL.Func(
         [],
         [
@@ -33,6 +43,11 @@ export const idlFactory = ({ IDL }) => {
             'Err' : IDL.Text,
           }),
         ],
+        [],
+      ),
+    'test_beefy2' : IDL.Func(
+        [],
+        [IDL.Variant({ 'Ok' : IDL.Vec(IDL.Nat8), 'Err' : IDL.Text })],
         [],
       ),
     'update_state' : IDL.Func(

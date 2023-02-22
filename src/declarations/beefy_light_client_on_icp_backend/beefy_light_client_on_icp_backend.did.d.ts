@@ -17,11 +17,17 @@ export interface _SERVICE {
     { 'Ok' : { 'signature' : Uint8Array } } |
       { 'Err' : string }
   >,
+  'sign_messages2' : ActorMethod<
+    [Uint8Array, Uint8Array, Uint8Array, Uint8Array],
+    { 'Ok' : Uint8Array } |
+      { 'Err' : string }
+  >,
   'test_beefy' : ActorMethod<
     [],
     { 'Ok' : { 'signature' : Uint8Array } } |
       { 'Err' : string }
   >,
+  'test_beefy2' : ActorMethod<[], { 'Ok' : Uint8Array } | { 'Err' : string }>,
   'update_state' : ActorMethod<
     [Uint8Array],
     { 'Ok' : null } |

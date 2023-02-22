@@ -6,7 +6,7 @@ import { createRequire } from "node:module";
 import {Ed25519KeyIdentity} from "@dfinity/identity";
 
 const require = createRequire(import.meta.url);
-const localCanisterIds = require("../../canister_ids.json");
+const canisterIds = require("../../canister_ids.json");
 
 // export const host = "http://127.0.0.1:4943";
 export const host = "https://ic0.app";    //mainnet
@@ -15,8 +15,9 @@ const agent = new HttpAgent({
   identity: await identity,
   fetch,
 });
-const effectiveCanisterId =
-  canisterId?.toString() ?? localCanisterIds.beefy_light_client_on_icp_backend.local;
+
+const effectiveCanisterId = canisterIds.beefy_light_client_on_icp_backend.ic;
+
 export const actor = createActor(effectiveCanisterId, {
     agent,
 });

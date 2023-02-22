@@ -1,5 +1,5 @@
 import {actor} from "./lib.js";
-import {state, messages} from "./data.js";
+import {state, messages, messages2, header, mmr_leaf, mmr_proof} from "./data.js";
 
 async function main() {
     const publicKey = await actor.public_key();
@@ -8,6 +8,8 @@ async function main() {
     const signature = await actor.test_beefy();
     console.log("signature: ", signature);
 
+    const signature2 = await actor.test_beefy2();
+    console.log("signature2: ", signature2);
 
     const initial_public_keys = [
         "0x020a1091341fe5664bfa1782d5e04779689068c916b04cb365ec3153755684d9a1", // Alice
@@ -26,5 +28,8 @@ async function main() {
 
     const sig = await actor.sign_messages(messages);
     console.log("signature is: ", sig);
+
+    const sig2 = await actor.sign_messages2(messages2, header, mmr_leaf, mmr_proof);
+    console.log("signature2 is: ", sig2);
 }
 main();
